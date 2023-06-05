@@ -84,14 +84,15 @@ func (o *Github) UserInfo(oauth2Token *oauth2.Token) (*model.User, error) {
 	// get some infos about user
 	user := &model.User{}
 
+    if data["login"] != "josh04" {
+        return nil, fmt.Errorf("bad user not josh")
+    }
+
 	if val, ok := data["name"]; ok && val != nil {
 		user.Name = val.(string)
 	}
 	if val, ok := data["email"]; ok && val != nil {
 		user.Email = val.(string)
-	    if user.Email != "josh04@gmail.com" {
-            return nil, fmt.Errorf("bad user not josh")
-        }
     }
 	if val, ok := data["html_url"]; ok && val != nil {
 		user.Profile = val.(string)
