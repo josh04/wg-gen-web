@@ -1,6 +1,7 @@
 const webpack = require("webpack");
 
 module.exports = {
+  publicPath: '/wg/',
   devServer: {
     port: 8081,
     disableHostCheck: true,
