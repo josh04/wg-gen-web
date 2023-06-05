@@ -5,7 +5,7 @@ import TokenService from "../services/token.service";
 
 Vue.use(VueAxios, axios);
 
-let baseUrl = "/api/v1.0";
+let baseUrl = "/wg/api/v1.0";
 if (process.env.NODE_ENV === "development"){
   baseUrl = process.env.VUE_APP_API_BASE_URL;
 }
